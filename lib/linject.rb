@@ -1,20 +1,22 @@
 class Array
 
-	def linject(x=nil)
-		if x == nil
-			copy = self.dup 
+	def linject(arg=nil, symbol=false )
+		copy = self.dup
+		if  arg == nil && symbol == false
 			sum = copy.shift
 			copy.each do |item|
-			sum = yield sum, item if block_given?
+			sum = yield sum, item
 			end
-			sum
+		elsif arg == nil && symbol
+			
+			puts "HI"
+			
 		else
-			copy = self.dup 
-			sum = x
+			sum = arg
 			copy.each do |item|
-			sum = yield sum, item if block_given?
+			sum = yield sum, item
 			end
-			sum
 		end	
+		sum
 	end
 end	
