@@ -43,7 +43,8 @@ describe Array do
 
 	context 'with a symbol' do
 
-		xit "can add numbers" do
+		it "can add numbers" do
+			expect(array.linject(:+)).to eq(14)
 			expect(array.inject(:+)).to eq(14)
 		end
 
