@@ -1,6 +1,6 @@
 class Array
 
-	def linject
+	def linject(x =nil)
 		copy = self.dup 
 		sum = copy.shift
 		copy.each do |item|

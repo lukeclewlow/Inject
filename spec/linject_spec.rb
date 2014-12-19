@@ -24,7 +24,8 @@ describe Array do
 
 	context 'with an arguments and a block' do
 
-		xit "can add with a starting point" do
+		it "can add with a starting point" do
+		expect(array.linject(10){ | sum, item | sum + item } ).to eq(24)
 		expect(array.inject(10){ | sum, item | sum + item } ).to eq(24)
 		end
 
