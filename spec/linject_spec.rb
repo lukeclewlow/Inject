@@ -29,6 +29,16 @@ describe Array do
 		expect(array.inject(10){ | sum, item | sum + item } ).to eq(24)
 		end
 
+		it "can minus with a starting point" do
+		expect(array.linject(10){ | sum, item | sum - item } ).to eq(-4)
+		expect(array.inject(10){ | sum, item | sum - item } ).to eq(-4)
+		end
+
+		it "can multiply with a starting point" do
+		expect(array.linject(10){ | sum, item | sum * item } ).to eq(1200)
+		expect(array.inject(10){ | sum, item | sum * item } ).to eq(1200)
+		end
+
 	end
 
 	context 'with a symbol' do
