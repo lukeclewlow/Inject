@@ -1,3 +1,4 @@
+require 'byebug'	
 require 'linject'
 # 
 describe Array do
@@ -44,13 +45,27 @@ describe Array do
 	context 'with a symbol' do
 
 		it "can add numbers" do
-			expect(array.llinject(:+)).to eq(14)
+			# byebug
+			expect(array.linject(:+)).to eq(14)
 			expect(array.inject(:+)).to eq(14)
+		end
+
+		it "can minus numbers" do
+			# byebug
+			expect(array.linject(:-)).to eq(-10)
+			expect(array.inject(:-)).to eq(-10)
 		end
 
 	end
 
 	context 'with a symbol argument' do
+
+		it "can add numbers" do
+			# byebug
+			expect(array.linject(10, :+)).to eq(24)
+			expect(array.inject(10, :+)).to eq(24)
+		end
+
 
 	end
 
