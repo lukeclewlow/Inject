@@ -45,15 +45,18 @@ describe Array do
 	context 'with a symbol' do
 
 		it "can add numbers" do
-			# byebug
 			expect(array.linject(:+)).to eq(14)
 			expect(array.inject(:+)).to eq(14)
 		end
 
 		it "can minus numbers" do
-			# byebug
 			expect(array.linject(:-)).to eq(-10)
 			expect(array.inject(:-)).to eq(-10)
+		end
+
+		it "can multiply numbers" do
+			expect(array.linject(:*)).to eq(120)
+			expect(array.inject(:*)).to eq(120)
 		end
 
 	end
@@ -61,7 +64,6 @@ describe Array do
 	context 'with a symbol argument' do
 
 		it "can add numbers" do
-			# byebug
 			expect(array.linject(10, :+)).to eq(24)
 			expect(array.inject(10, :+)).to eq(24)
 		end
