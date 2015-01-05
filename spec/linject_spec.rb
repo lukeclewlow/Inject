@@ -63,11 +63,20 @@ describe Array do
 
 	context 'with a symbol argument' do
 
-		it "can add numbers" do
+		it "can add numbers with a starting point" do
 			expect(array.linject(10, :+)).to eq(24)
 			expect(array.inject(10, :+)).to eq(24)
 		end
 
+		it "can minus numbers with a starting point" do
+			expect(array.linject(10, :-)).to eq(-4)
+			expect(array.inject(10, :-)).to eq(-4)
+		end
+
+		it "can multiply numbers with a starting point" do
+			expect(array.linject(10, :*)).to eq(1200)
+			expect(array.inject(10, :*)).to eq(1200)
+		end
 
 	end
 
